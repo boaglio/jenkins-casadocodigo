@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="minhasmoedas-fontes-bkp" default="bkp" basedir=".">
+
+	<property name="projeto" value="${ant.project.name}" />
+	<property name="bkp-dir" value="/tmp/bkp/" />
+	<property name="diretorio-para-zipar1" value="sql" />
+	<property name="diretorio-para-zipar2" value="src" />
+
+	<target name="clean">
+		<delete file="${projeto}.zip" />
+	</target>
+
+	<target name="bkp">
+		  <zip destfile="${projeto}.zip">
+		    <fileset dir="${diretorio-para-zipar1}" />
+		    <fileset dir="${diretorio-para-zipar2}" />
+		  </zip>
+		  <copy file="${projeto}.zip" todir="${bkp-dir}"/>
+	</target>
+
+</project>

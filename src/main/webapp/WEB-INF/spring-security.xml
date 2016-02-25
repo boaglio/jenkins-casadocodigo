@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+   xsi:schemaLocation="http://www.springframework.org/schema/security
+     http://www.springframework.org/schema/security/spring-security-3.2.xsd
+     http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+   <http pattern="/css/**" security="none"/>
+   <http pattern="/js/**"  security="none"/>
+   <http pattern="/img/**" security="none"/>
+
+   <http use-expressions="true">
+
+       <intercept-url pattern="/"       access="permitAll" />
+       <intercept-url pattern="/home"   access="permitAll" />
+       <intercept-url pattern="/entrar" access="isAnonymous()" />
+       <intercept-url pattern="/sobre"  access="permitAll" />
+       <intercept-url pattern="/sair"   access="isAnonymous()" />
+
+       <intercept-url pattern="/cambio" access="hasAnyRole('ROLE_USER')" />
+       <intercept-url pattern="/other/**" access="isAuthenticated()" />
+
+       <access-denied-handler error-page="/403" />
+
+       <form-login login-page='/entrar'
+                   login-processing-url="/j_spring_security_check"
+                   default-target-url="/cambio"
+                   always-use-default-target="false"
+                   authentication-failure-url="/entrar?error=true"
+                   username-parameter="username"
+                   password-parameter="password" />
+
+       <logout logout-url="/sair"
+               logout-success-url="/sairComSucesso"
+               delete-cookies="JSESSIONID"
+               invalidate-session="true" />
+
+   </http>
+
+   <authentication-manager>
+
+       <authentication-provider>
+           <jdbc-user-service data-source-ref="myDataSource"
+               users-by-username-query="select username,password, enabled from users where username=?"
+               authorities-by-username-query="select username, role from users where username=?" />
+       </authentication-provider>
+
+   </authentication-manager>
+
+</beans:beans>
