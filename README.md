@@ -8,4 +8,4 @@ Erros do livro página 62, o certo é groovy postbuild e não Groovy Plugin
 Informações das conferências de usuários de Jenkins
 pelo mundo ─ http://jenkins-ci.org/category/tags/juc - pagina 108 link 404
 
-gostei bastante do livro, obrigado!
+gostei bastante do livro, obrigado.
