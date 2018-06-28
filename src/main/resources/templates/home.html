@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <div th:replace="fragments/header :: header-css" />
+</head>
+<body>
+  <div th:replace="fragments/header :: header" />
+  <main role="main" class="container">
+   <div  class="text-center">
+    <h1 class="mt-5">Sua cota&ccedil;&atilde;o na Internet!</h1>
+    <br/><br/>
+    <img th:src="@{/images/moedas1.png}" />
+    <img th:src="@{/images/moedas2.png}" />
+    <img th:src="@{/images/moedas3.png}" />
+   </div>
+  </main>
+  <div th:replace="fragments/footer :: footer" />
+ </div>
+</body>
+</html>

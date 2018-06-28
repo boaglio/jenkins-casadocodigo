@@ -2,11 +2,11 @@ package com.boaglio.minhasmoedas.teste.core;
 
 public enum Site {
 
-	host("http://localhost:10000/"),
+	host("http://localhost:8080/"),
 	homeTitle("Minhas Moedas"),
 	user("boaglio"),
 	password("boaglio"),
-	login("/entrar"),
+	login("/login"),
 	loginWelcome("de hoje");
 
 
