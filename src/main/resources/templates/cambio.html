@@ -7,7 +7,7 @@
  <div th:replace="fragments/header :: header" />
   <div  class="text-center">
    <div class="jumbotron">
-    <h2 th:inline="text">Ol&aacute; [[${#httpServletRequest.remoteUser}]], o c&acirc;mbio de hoje &eacute;:</h2>
+    <h2 th:inline="text">Ol&aacute;, o c&acirc;mbio de hoje &eacute;:</h2>
 <!-- FXEXCHANGERATE.COM EXCHANGE RATE CONVERTER START -->
 <center>
  <div style="width:196px;border:1px solid #2D6AB4;background-color:#F0F0F0;">
@@ -26,6 +26,22 @@
  <div class="accordion" id="accordionCotacoes">
   <div class="card">
     <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+         Cota&ccedil;&otilde;es
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionCotacoes">
+      <div class="card-body">
+		<b>Menor valor:</b> <div th:text="${minValue}">minValue</div>
+		<b>Valor m&eacute;dio:</b> <div th:text="${averageValue}">averageValue</div>
+		<b>Maior valor:</b> <div th:text="${maxValue}">maxValue</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           Intervalo
@@ -36,22 +52,6 @@
       <div class="card-body">
 	    <b>Primeiro dia:</b> <div th:text="${#dates.format(minDay)}">minDay</div>
 		<b>&Uacute;ltimo dia:</b> <div th:text="${#dates.format(maxDay)}">maxDay</div>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-         Cota&ccedil;&otilde;es
-        </button>
-      </h5>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionCotacoes">
-      <div class="card-body">
-		<b>Menor valor:</b> <div th:text="${minValue}">minValue</div>
-		<b>Valor m&eacute;dio:</b> <div th:text="${averageValue}">averageValue</div>
-		<b>Maior valor:</b> <div th:text="${maxValue}">maxValue</div>
       </div>
     </div>
   </div>

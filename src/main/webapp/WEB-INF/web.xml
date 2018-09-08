@@ -6,19 +6,6 @@
 
         <display-name>Minhas Moedas - Fernando Boaglio</display-name>
 
-        <listener>
-            <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-        </listener>
-
-        <!-- Spring Security -->
-        <context-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>
-                /WEB-INF/spring-security.xml,
-                /WEB-INF/data-source-cfg.xml
-            </param-value>
-        </context-param>
-
         <!-- Spring MVC -->
         <servlet>
             <servlet-name>mvc-dispatcher</servlet-name>
@@ -32,16 +19,5 @@
             <servlet-name>mvc-dispatcher</servlet-name>
             <url-pattern>/</url-pattern>
         </servlet-mapping>
-
-        <!-- Filtro do Spring Security -->
-        <filter>
-            <filter-name>springSecurityFilterChain</filter-name>
-            <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-        </filter>
-
-        <filter-mapping>
-            <filter-name>springSecurityFilterChain</filter-name>
-            <url-pattern>/*</url-pattern>
-        </filter-mapping>
 
 </web-app>
