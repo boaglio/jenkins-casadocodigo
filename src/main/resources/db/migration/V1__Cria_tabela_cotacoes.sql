@@ -1,4 +1,4 @@
-CREATE TABLE dolar_mes (
+CREATE TABLE IF NOT EXISTS dolar_mes (
   id_dolar_mes INT NOT NULL AUTO_INCREMENT,
   day DATE NULL,
   value VARCHAR(45) NULL,

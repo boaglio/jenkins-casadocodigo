@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.boaglio.minhasmoedas.domain.Cotacao;
 
 public interface CotacaoRepository extends CrudRepository<Cotacao, Long> {
- 
+
     @Query("SELECT AVG(c.value) from Cotacao c")
     double getAverageValue();
 
@@ -23,5 +23,8 @@ public interface CotacaoRepository extends CrudRepository<Cotacao, Long> {
 
     @Query("SELECT MIN(c.day) from Cotacao c")
     Date getMinDay();
- 
+
+    @Query(value="SELECT DATABASE()",nativeQuery = true)
+    String getMySQLDatabase();
+
 }

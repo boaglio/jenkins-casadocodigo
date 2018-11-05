@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <div th:replace="fragments/header :: header-css" />
+ <style type="text/css">
+.db { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 100px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+ </style>
+</head>
+<body>
+ <div th:replace="fragments/header :: header" />
+ <div  class="text-center">
+  <div class="jumbotron">
+   <h2 th:inline="text">Banco de dados em uso</h2>
+   <div class="db" th:text="${database}">database</div>
+  </div>
+ </div>
+<div th:replace="fragments/footer :: footer"/>
+</body>
+</html>

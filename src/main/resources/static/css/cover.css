@@ -32,6 +32,8 @@ body > .container {
   padding-left: 15px;
 }
 
+.db { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 275px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
 code {
   font-size: 80%;
 }

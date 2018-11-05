@@ -6,8 +6,8 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.oracle:ojdbc6:12.1.0.2'
-        classpath 'org.flywaydb:flyway-gradle-plugin:3.2.1'
+        classpath 'mysql:mysql-connector-java:8.0.13'
+        classpath 'org.flywaydb:flyway-gradle-plugin:5.2.1'
     }
 }
 
