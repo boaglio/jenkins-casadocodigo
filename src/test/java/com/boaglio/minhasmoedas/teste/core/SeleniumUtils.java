@@ -17,8 +17,15 @@ public class SeleniumUtils {
 
 	private static String workingDir = getDir();
 
+
+	public static String site;
+
 	static {
 		 workingDir = getDir();
+		 site = System.getProperty("SITE");
+		 if (site==null) {
+			 site = Site.host.value();
+		 }
 	}
 
 	public static void tiraScreenshot(String fileName, WebDriver driver) {

@@ -22,3 +22,4 @@ INSERT INTO dolar_mes(day,value) VALUES('2017-09-01',3.1325);
 INSERT INTO dolar_mes(day,value) VALUES('2017-10-01',3.1923);
 INSERT INTO dolar_mes(day,value) VALUES('2017-11-01',3.2629);
 INSERT INTO dolar_mes(day,value) VALUES('2017-12-01',3.295);
+commit;

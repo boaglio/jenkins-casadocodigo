@@ -1,11 +1,4 @@
 
-CREATE TABLE IF NOT EXISTS dolar_mes (
-  id_dolar_mes INT NOT NULL AUTO_INCREMENT,
-  day DATE NULL,
-  value VARCHAR(45) NULL,
-  PRIMARY KEY (id_dolar_mes),
-  UNIQUE INDEX day_uk (day));
-
 INSERT INTO dolar_mes(day,value) VALUES('1995-03-01',0.8905);
 INSERT INTO dolar_mes(day,value) VALUES('1995-04-01',0.9074);
 INSERT INTO dolar_mes(day,value) VALUES('1995-05-01',0.8975);
